@@ -35,6 +35,8 @@ class Empleado{
 	private String nombre;
 	private double sueldo;
 	private Date altaContrato;
+	private int id;
+	private static int idSiguiente;
 	
 	
 	public Empleado(String nombre, double sueldo, int anio, int mes, int dia) {
@@ -42,6 +44,7 @@ class Empleado{
 		this.sueldo = sueldo;
 		GregorianCalendar calendario = new GregorianCalendar(anio, mes-1, dia);
 		this.altaContrato = calendario.getTime();
+		this.id = ++idSiguiente;
 	}
 	public String getNombre() {
 		return this.nombre;
